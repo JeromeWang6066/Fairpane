@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#161311">
+  <title>窗景心晴</title>
+  <link rel="stylesheet" href="/console.css">
+</head>
+<body>
+  <main>
+    <div class="brand">
+      <p class="kicker">Fairpane</p>
+      <button type="button" id="lang" aria-label="Switch to English">English</button>
+    </div>
+    <h1 data-i18n="heading">画面</h1>
+    <p id="status" hidden></p>
+
+    <section>
+      <h2 data-i18n="place">地点</h2>
+      <div id="views" class="choices"></div>
+      <input id="view-custom" type="text" maxlength="40" data-i18n-placeholder="viewWish" placeholder="还想去其他地方" autocomplete="off">
+    </section>
+
+    <section>
+      <h2 data-i18n="style">风格</h2>
+      <div id="styles" class="choices"></div>
+      <input id="style-custom" type="text" maxlength="40" data-i18n-placeholder="styleWish" placeholder="想要其他的画法" autocomplete="off">
+    </section>
+
+    <section>
+      <h2 data-i18n="time">时间</h2>
+      <p class="hint" data-i18n="timeHint">从这时辰开始画，更早的不再画</p>
+      <div id="chapters" class="choices">
+        <button type="button" data-chapter="morning" data-i18n="morning">晨</button>
+        <button type="button" data-chapter="noon" data-i18n="noon">午</button>
+        <button type="button" data-chapter="dusk" data-i18n="dusk">暮</button>
+        <button type="button" data-chapter="night" data-i18n="night">夜</button>
+      </div>
+    </section>
+
+    <section>
+      <h2 data-i18n="mood">心情</h2>
+      <p class="score"><span id="mood-value">5</span><span id="mood-word">还好</span></p>
+      <div class="mood-range">
+        <span aria-hidden="true" data-i18n="moodLow">低</span>
+        <input id="mood" type="range" min="1" max="10" step="1" value="5" data-i18n-aria="moodAria" aria-label="心情分数">
+        <span aria-hidden="true" data-i18n="moodHigh">高</span>
+      </div>
+    </section>
+
+    <section>
+      <h2 data-i18n="weather">天气</h2>
+      <div id="weather" class="choices">
+        <button type="button" data-weather="" class="is-on" data-i18n="local">当地</button>
+        <button type="button" data-weather="晴" data-i18n="clear">晴</button>
+        <button type="button" data-weather="多云" data-i18n="cloudy">多云</button>
+        <button type="button" data-weather="阴" data-i18n="overcast">阴</button>
+        <button type="button" data-weather="雨" data-i18n="rain">雨</button>
+        <button type="button" data-weather="雪" data-i18n="snow">雪</button>
+        <button type="button" data-weather="雾" data-i18n="fog">雾</button>
+      </div>
+    </section>
+
+    <input id="note" type="text" maxlength="80" data-i18n-placeholder="note" placeholder="可以写一句，也可以不写" autocomplete="off">
+    <button type="button" id="again" data-i18n="again">重新生成</button>
+    <button type="button" id="restore" data-i18n="restore">换回原来的壁纸</button>
+  </main>
+  <script src="/console.js"></script>
+</body>
+</html>

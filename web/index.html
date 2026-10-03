@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#161311">
+  <title>窗景心晴</title>
+  <link rel="stylesheet" href="/app.css">
+</head>
+<body>
+  <div id="stage" data-chapter="noon">
+    <img id="photo-a" class="photo" alt="">
+    <img id="photo-b" class="photo" alt="">
+  </div>
+  <div id="chrome">
+    <p id="status" hidden></p>
+    <section id="picker" hidden>
+      <p id="picker-lead">先选窗外的景观</p>
+    </section>
+    <section id="wish" hidden>
+      <form id="wish-form" class="panel">
+        <p id="wish-lead" class="kicker">窗外</p>
+        <h1 id="wish-title">还想去其他地方</h1>
+        <input id="wish-text" type="text" maxlength="40" placeholder="写下想看见的" autocomplete="off">
+        <div class="actions">
+          <button type="submit" id="wish-go">就这个</button>
+          <button type="button" id="wish-back">返回</button>
+        </div>
+      </form>
+    </section>
+    <section id="reveal" aria-hidden="true">
+      <div class="reveal-bloom" aria-hidden="true"></div>
+      <p class="reveal-caption">画面正在显影</p>
+    </section>
+    <section id="checkin" hidden>
+      <form id="checkin-form" class="panel">
+        <p class="kicker">Fairpane</p>
+        <h1>感觉怎么样</h1>
+        <p class="score"><span id="mood-value">5</span><span id="mood-word">还好</span></p>
+        <div class="mood-range">
+          <span class="mood-face" aria-hidden="true">😢</span>
+          <input id="mood" type="range" min="1" max="10" step="1" value="5" aria-label="心情分数">
+          <span class="mood-face" aria-hidden="true">😊</span>
+        </div>
+        <input id="note" type="text" maxlength="80" placeholder="可以写一句，也可以不写" autocomplete="off">
+        <div class="weather-row" id="weather">
+          <span>天气</span>
+          <button type="button" data-weather="" class="is-on">当地</button>
+          <button type="button" data-weather="晴">晴</button>
+          <button type="button" data-weather="多云">多云</button>
+          <button type="button" data-weather="阴">阴</button>
+          <button type="button" data-weather="雨">雨</button>
+          <button type="button" data-weather="雪">雪</button>
+          <button type="button" data-weather="雾">雾</button>
+        </div>
+        <div class="actions">
+          <button type="submit" id="begin">开始今天</button>
+          <button type="button" id="skip">今天先不打分</button>
+        </div>
+      </form>
+    </section>
+    <section id="failure" hidden>
+      <div class="panel">
+        <p id="failure-text"></p>
+        <button type="button" id="retry">再试一次</button>
+      </div>
+    </section>
+    <div id="fit" hidden>
+      <p id="fit-ask">今天这张还合适吗</p>
+      <button type="button" id="fit-up">合适</button>
+      <button type="button" id="fit-down">不太合适</button>
+      <form id="fit-note" hidden>
+        <input id="fit-feeling" type="text" maxlength="40" placeholder="可以写一句感受，也可以不写" autocomplete="off">
+        <button type="submit" id="fit-save">记下</button>
+        <button type="button" id="fit-skip">先不写</button>
+      </form>
+    </div>
+    <button type="button" id="next-day" hidden>进入下一天</button>
+    <div id="scrub" hidden>
+      <span>时刻</span>
+      <button type="button" data-chapter="morning" aria-pressed="false">晨</button>
+      <button type="button" data-chapter="noon" aria-pressed="false">午</button>
+      <button type="button" data-chapter="dusk" aria-pressed="false">暮</button>
+      <button type="button" data-chapter="night" aria-pressed="false">夜</button>
+    </div>
+    <div id="mood-dock" hidden>
+      <button type="button" id="mood-mark" aria-label="调整今天的分数"></button>
+      <label id="mood-pop" hidden>
+        <input id="mood-edit" type="range" min="1" max="10" step="1" value="5" aria-label="调整今天的分数">
+        <span id="mood-edit-value">5</span>
+      </label>
+    </div>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>

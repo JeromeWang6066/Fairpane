@@ -1,0 +1,152 @@
+:root { color-scheme: dark; }
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #161311;
+  color: #f4efe8;
+  font-family: "Iowan Old Style", Palatino, "Songti SC", "Noto Serif SC", serif;
+}
+
+button, input { font: inherit; color: inherit; }
+
+button { cursor: pointer; }
+
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.85);
+  outline-offset: 3px;
+}
+
+main {
+  width: min(640px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 48px 0 64px;
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.kicker {
+  margin: 0;
+  letter-spacing: 0.18em;
+  font-size: 14px;
+  color: rgba(244, 239, 232, 0.62);
+}
+
+#lang {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: rgba(244, 239, 232, 0.62);
+  letter-spacing: 0.06em;
+  font-size: 14px;
+}
+
+h1 {
+  margin: 8px 0 0;
+  font-weight: 500;
+  font-size: 40px;
+}
+
+h2 {
+  margin: 0 0 12px;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+section { margin-top: 32px; }
+
+.hint {
+  margin: -4px 0 12px;
+  color: rgba(244, 239, 232, 0.62);
+  font-size: 15px;
+}
+
+#status {
+  margin: 18px 0 0;
+  min-height: 1.4em;
+  font-size: 16px;
+}
+
+.choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.choices button {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  padding: 8px 16px;
+  background: transparent;
+}
+
+.choices button.is-on {
+  border-color: transparent;
+  background: #f3eee6;
+  color: #241c16;
+}
+
+input[type="text"] {
+  width: 100%;
+  margin-top: 14px;
+  padding: 10px 0;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 0;
+  background: transparent;
+  color-scheme: dark;
+  font-size: 17px;
+}
+
+input::placeholder { color: rgba(255, 255, 255, 0.42); }
+
+.score {
+  margin: 0 0 8px;
+  font-size: 22px;
+}
+
+.score span + span { margin-left: 12px; }
+
+.mood-range {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 12px;
+  align-items: center;
+}
+
+input[type="range"] { width: 100%; }
+
+#note { margin-top: 36px; }
+
+#again {
+  margin-top: 28px;
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 22px;
+  background: #f3eee6;
+  color: #241c16;
+}
+
+#again:disabled,
+#restore:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+#restore {
+  display: block;
+  margin-top: 18px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: rgba(244, 239, 232, 0.72);
+}
